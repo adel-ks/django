@@ -1,0 +1,8 @@
+env/
+*.pyc
+*~
+db.sqlite3
+/static
+__pycache__
+
+#pip freeze>requirements.txt
