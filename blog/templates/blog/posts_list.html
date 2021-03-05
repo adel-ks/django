@@ -1,6 +1,18 @@
 <h1>This is my blog list page</h1>
 <div class = 'features'>
-	{% for i in get_posts %}
-	<h3> {{i.title}}</h3>
+	<table style="border: 1px solid #000;">
+		<tr>
+		<th style="border: 1px solid #000;">ID Post</th>	
+		<th style="border: 1px solid #000;">Title of post</th>
+		<th style="border: 1px solid #000;">Text of post</th>
+		</tr>
+	{% for post in get_posts %}
+		<tr style="border: 1px solid #000;">
+			<td>{{post.id}}</td>
+			<td>{{post.title}}</td>
+			<td>{{post.content}}</td>
+		</tr>
+
 	{% endfor %}
+	</table>
 </div>
