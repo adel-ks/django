@@ -1,2 +1,12 @@
 <h2>Главная страница блога</h2>
-{{variable}}
+<!-- {{variable}} -->
+<p>Привет. Я автор этого блога, меня зовут {{username}}</p>
+<p>Мои друзья {{my_friends}}}</p>
+<p>Мои друзья:
+	<ol>
+		{% for name in my_friends %}
+			<li> {{name}}</li>
+		{% endfor %}
+		
+	</ol>
+</p>
