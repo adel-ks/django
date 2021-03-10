@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post
+from .forms import PostForm
 
 
 def home(request):
@@ -37,3 +38,7 @@ def post_details(request, post_id):
 	'post': post
 	}
 	return render(request, 'blog/post_details.html', context)
+
+
+def create_post(request):
+	form = PostForm(request.POST or None)
