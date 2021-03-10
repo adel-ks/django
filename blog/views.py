@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Post
 from .forms import PostForm
 
@@ -42,3 +42,13 @@ def post_details(request, post_id):
 
 def create_post(request):
 	form = PostForm(request.POST or None)
+	if form.is_valid():
+		# post is written to DB
+		instance = form.save()
+		print(instance)
+		return HttpResponseRedirect('/blog/')
+
+	context = {
+	'form':form
+	}
+	return render(request, 'blog/create_post.html', context)
