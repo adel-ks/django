@@ -66,3 +66,13 @@ def update_post(request, post_id):
 			return HttpResponseRedirect('/blog/'+post_id +'/')
 	context = {'form':form}
 	return render (request, 'blog/update_post.html', context)
+
+
+def delete_post(request, post_id):
+	print(request)
+	post = get_object_or_404(Post,id = post_id)
+	if request.method == 'POST':
+		pass
+
+	context = {'post_id':post_id}
+	return render(request, 'blog/delete_post.html', context)
