@@ -1,4 +1,9 @@
 <h3>Вы на странице удаления поста</h3>
 <p>Вы действительно хотите удалить пост
-<q>{{post.title}}</q>
+<strong>{{post.title}}</strong>
 ?</p>
+<form action="" method="POST">
+	{% csrf_token %}
+	<input type="submit" value="Да">
+	}
+</form>

@@ -72,7 +72,8 @@ def delete_post(request, post_id):
 	print(request)
 	post = get_object_or_404(Post,id = post_id)
 	if request.method == 'POST':
-		pass
+		post.delete()
+		return HttpResponseRedirect('/blog/')
 
 	context = {'post_id':post_id}
 	return render(request, 'blog/delete_post.html', context)
