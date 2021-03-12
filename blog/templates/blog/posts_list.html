@@ -9,8 +9,14 @@
 	{% for post in get_posts %}
 		<tr style="border: 1px solid #000;">
 			<td>{{post.id}}</td>
-			<td>{{post.title}}</td>
+			<td>
+				<a href="{% url 'post_details' post.id %}">{{post.title}}</a>
+			</td>
 			<td>{{post.content}}</td>
+			<td> <a href="{% url 'update_post' post.id %}">
+			Редактировать</a>
+			</td>
+			<td>Удалить</td>
 		</tr>
 
 	{% endfor %}
